@@ -31,3 +31,21 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_
 # -- XGBoost Regressor 
 model = XGBRegressor()
 model.fit(X_train, y_train)
+
+# -- the predict house price function 
+def predict_house_price(crim, zn, indus, chas, nox, rm, age, dis, rad, tax, ptratio, b, lstat,):
+    input_data = (float(crim), float(zn), float(indus), 
+                  float(chas), float(nox), float(rm), 
+                  float(age), float(dis), float(rad), 
+                  float(tax), float(ptratio), float(b), 
+                  float(lstat))
+    
+    # -- convert the input data into a numpy array 
+    input_data_as_np_array = np.asarray(input_data)
+    
+    # -- reshape the array as we are predicting for only one instance 
+    input_data_reshaped = input_data_as_np_array.reshape(1, -1)
+    
+    prediction = model.predict(input_data_reshaped)
+    
+    return prediction[0]
