@@ -90,3 +90,10 @@ with st.form("house_price_pred_form", clear_on_submit=False):
     
     # -- prediction, form submit button 
     submitted = col2.form_submit_button("Predict", type="primary", help="click to predict house price")
+
+    if(submitted):
+        col3.title(str(predict_house_price(crim_input, zn_input, indus_input,  
+                                           chas_input, nox_input, rm_input,
+                                           age_input, dis_input, rad_input, 
+                                           tax_input, ptratio_input, b_input,
+                                           lstat_input)), anchor="output-str")
