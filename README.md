@@ -7,6 +7,7 @@ Follow vividly this instructions to set up  the project.
 1. [Extensions Installation](#extensions-installation)
 1. [Install Dependencies](#install-dependencies)
 1. [Download Project](#download-project)
+1. [Run Web App](#run-web-app)
 
 ## VSCode Installation
 
@@ -39,8 +40,16 @@ Follow either ways to get this project to your PC
 
 1. Download the project and extract it. Right click and open the project in VSCode.
 1. Clone the repository in *C:/dir/project-dir/*. Right click and open the project in VSCode.
+1. Click on *house-pred.ipynb* file, wait for it to load all cells then click on run all.
 
 ![Project Image](./images/img-1.png)
 ![Project Image](./images/img-2.png)
+
+## Run Web App
+
+Open your project as the present working directory in the terminal and run `streamlit run app.py`
+
+![Project Image](./images/ml-app-1.png)
+![Project Image](./images/ml-app-2.png)
 
 Enjoy!
