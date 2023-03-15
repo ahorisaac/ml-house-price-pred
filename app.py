@@ -49,3 +49,44 @@ def predict_house_price(crim, zn, indus, chas, nox, rm, age, dis, rad, tax, ptra
     prediction = model.predict(input_data_reshaped)
     
     return prediction[0]
+
+# -- ml web app UI
+st.columns(5)[2].image("./images/icon.png", width=106)
+st.columns(3)[1].subheader("House Price Prediction Form")
+
+with st.form("house_price_pred_form", clear_on_submit=False):
+    col1, col2, col3 = st.columns(3)
+            
+    # -- 1st row
+    crim_input = col1.number_input("CRIM", help="per capita crime rate by town")
+    
+    zn_input = col2.number_input("ZN", help="proportion of residential land zoned for lots  over 25,000 sq.ft")
+    
+    indus_input = col3.number_input("INDUS", help="proportion of non-retail business acres per town")
+    
+    # -- 2nd row
+    chas_input = col1.number_input("CHAS", help="Charles River dummy variable (1 if tract bounds river; 0 otherwise)")
+    
+    nox_input = col2.number_input("NOX", help="nitric oxides concentration (parts per 10 million)")
+
+    rm_input = col3.number_input("RM", help="average number of rooms per dwelling")
+    
+    # -- 3rd row
+    age_input = col1.number_input("AGE", help="proportion of owner-occupied units built prior to 1940")
+    
+    dis_input = col2.number_input("DIS", help="weighted distances to five Boston employment centres")
+    
+    rad_input = col3.number_input("RAD", help="index of accessibility to radial highways")
+    
+    # -- 4th row
+    tax_input = col1.number_input("TAX", help="full-value property-tax per $10,000")
+    
+    ptratio_input = col2.number_input("PTRATIO", help="pupil-teacher ratio by town")
+    
+    b_input = col3.number_input("B", help="1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town")
+    
+    # -- 5th row
+    lstat_input = col1.number_input("LSTAT", help="\% \lower status of the population")
+    
+    # -- prediction, form submit button 
+    submitted = col2.form_submit_button("Predict", type="primary", help="click to predict house price")
